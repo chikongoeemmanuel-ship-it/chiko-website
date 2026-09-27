@@ -1,0 +1,2914 @@
+/* ==========================================================================
+   CHIKO ENTERPRISES & HOLDINGS - INTEGRATED ERP PORTALS
+   Warm Editorial & Corporate Refinement Design System
+   ========================================================================== */
+
+/* --- Custom Properties & Design Tokens --- */
+:root {
+  /* Crisp Corporate Canvas & Modern Surfaces */
+  --bg-canvas: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-warm: #f0fdfa;
+  --bg-surface-tint: #e0f2fe;
+  --bg-dark-editorial: #071927;
+  --bg-dark-card: #0b253a;
+
+  /* Typography Colors */
+  --ink-primary: #0a2540;
+  --ink-secondary: #334e68;
+  --ink-tertiary: #627d98;
+  --ink-muted: #829ab1;
+  --ink-on-dark: #f8fafc;
+  --ink-on-dark-muted: #9fb3c8;
+
+  /* Primary Theme Trio: Blue, Cyan, Green */
+  --brand-blue: #0b3b60;
+  --brand-blue-hover: #072740;
+  --brand-blue-accent: #0284c7;
+
+  --brand-cyan: #06b6d4;
+  --brand-cyan-dark: #0891b2;
+  --brand-cyan-light: #ecfeff;
+  --brand-cyan-glow: rgba(6, 182, 212, 0.18);
+
+  --brand-green: #16a34a;
+  --brand-green-hover: #15803d;
+  --brand-green-light: #f0fdf4;
+  --brand-green-glow: rgba(22, 163, 74, 0.18);
+
+  /* Chiko Pharmacy System Hues (Clinical Blue & Medical Cyan) */
+  --pharm-primary: #0284c7;
+  --pharm-primary-hover: #0369a1;
+  --pharm-accent: #06b6d4;
+  --pharm-light: #f0f9ff;
+  --pharm-border: #bae6fd;
+  --pharm-glow: rgba(2, 132, 199, 0.16);
+
+  /* Chiko Agrovet System Hues (Vibrant Agricultural Green) */
+  --agro-primary: #16a34a;
+  --agro-primary-hover: #15803d;
+  --agro-accent: #22c55e;
+  --agro-light: #f0fdf4;
+  --agro-border: #bbf7d0;
+  --agro-glow: rgba(22, 163, 74, 0.16);
+
+  /* High-Tech Accents & Gradients */
+  --gold-warm: #0891b2;
+  --gold-light: #ecfeff;
+  --gold-border: #a5f3fc;
+  --gold-metallic: linear-gradient(135deg, #0b3b60 0%, #06b6d4 50%, #16a34a 100%);
+
+  /* Borders & Dividers */
+  --border-subtle: #e2e8f0;
+  --border-medium: #cbd5e1;
+  --border-strong: #94a3b8;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 6px rgba(10, 37, 64, 0.04);
+  --shadow-md: 0 8px 20px rgba(10, 37, 64, 0.08);
+  --shadow-lg: 0 16px 36px rgba(10, 37, 64, 0.12);
+  --shadow-xl: 0 24px 50px rgba(10, 37, 64, 0.16);
+
+  /* Typography Font Stacks */
+  --font-editorial: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  /* Spacing & Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Global Reset & Box Sizing --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--ink-primary);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  background-image: 
+    radial-gradient(rgba(14, 116, 144, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* --- Typography Utilities --- */
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-editorial);
+  font-weight: 700;
+  color: var(--ink-primary);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+p {
+  color: var(--ink-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img, svg {
+  vertical-align: middle;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header container expands comfortably for full navigation and portal buttons */
+.main-header .container {
+  max-width: 1440px;
+  padding: 0 1.5rem;
+}
+
+/* --- Main Navigation Header --- */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(11, 59, 96, 0.1);
+  box-shadow: 0 4px 20px rgba(10, 37, 64, 0.05);
+  transition: box-shadow var(--transition-smooth), background-color var(--transition-smooth);
+}
+
+.main-header.scrolled {
+  box-shadow: 0 8px 30px rgba(10, 37, 64, 0.09);
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 86px;
+  gap: 1.25rem;
+  position: relative;
+}
+
+/* Brand Identity & Outstanding Enterprise Title */
+.brand-identity {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.brand-logo-frame {
+  width: 62px;
+  height: 62px;
+  border-radius: 14px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(11, 59, 96, 0.14), 0 0 0 1.5px rgba(6, 182, 212, 0.3);
+  padding: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.brand-identity:hover .brand-logo-frame {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 26px rgba(6, 182, 212, 0.35), 0 0 0 2px var(--brand-cyan);
+}
+
+.brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-logo-frame-footer {
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 4px 20px rgba(6, 182, 212, 0.25);
+}
+
+.brand-naming {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand-title {
+  font-family: var(--font-sans);
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.title-brand {
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: -0.015em;
+  background: linear-gradient(135deg, #0b3b60 0%, #0284c7 48%, #16a34a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  filter: drop-shadow(0 1px 1px rgba(11, 59, 96, 0.08));
+}
+
+.title-ent {
+  font-size: 1.38rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--ink-primary);
+  display: inline-block;
+}
+
+.brand-subtitle {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-secondary);
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sub-pharm {
+  color: #0284c7;
+  font-weight: 700;
+}
+
+.sub-sep {
+  color: #22c55e;
+  font-size: 0.85rem;
+}
+
+.sub-agro {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+/* Footer Brand Adaptations */
+.brand-title-footer {
+  font-size: 1.65rem;
+}
+
+.title-brand-footer {
+  font-size: 1.65rem;
+  font-weight: 900;
+  letter-spacing: -0.015em;
+  background: linear-gradient(135deg, #38bdf8 0%, #4ade80 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.title-ent-footer {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  display: inline-block;
+  margin-left: 0.3rem;
+}
+
+.brand-subtitle-footer {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #94a3b8;
+  margin-top: 3px;
+}
+
+/* Navigation Links */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 1;
+}
+
+.nav-link {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  position: relative;
+  padding: 0.45rem 0.15rem;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--brand-blue-accent);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2.5px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, var(--brand-cyan), var(--brand-green));
+  transition: width var(--transition-fast);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+/* Dual Header Actions (Prominent & High-Contrast ERP Launch Buttons) */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.btn-portal-launch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 0.62rem 1.15rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-smooth);
+  white-space: nowrap;
+  flex-shrink: 0;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.btn-portal-launch svg {
+  flex-shrink: 0;
+}
+
+.btn-portal-launch .txt-short {
+  display: none;
+}
+
+.btn-portal-launch .txt-full {
+  display: inline;
+}
+
+.btn-portal-pharm {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff !important;
+  border: 1px solid rgba(2, 132, 199, 0.4);
+}
+
+.btn-portal-pharm:hover {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  color: #ffffff !important;
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.35);
+}
+
+.btn-portal-agro {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  color: #ffffff !important;
+  border: 1px solid rgba(22, 163, 74, 0.4);
+}
+
+.btn-portal-agro:hover {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: #ffffff !important;
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 18px rgba(22, 163, 74, 0.35);
+}
+
+.mobile-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem;
+  color: var(--ink-primary);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.mobile-toggle:hover {
+  background: var(--bg-surface-warm);
+  border-color: var(--brand-blue-accent);
+}
+
+@media (max-width: 1200px) {
+  .nav-menu {
+    display: none;
+  }
+  .mobile-toggle {
+    display: inline-flex;
+  }
+}
+
+/* --- Hero Section (Refined Warm Editorial) --- */
+.hero-section {
+  padding: 4.5rem 0 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-editorial-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-surface-warm);
+  border: 1px solid var(--border-medium);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  letter-spacing: 0.04em;
+  margin-bottom: 1.5rem;
+}
+
+.hero-editorial-badge span.dot {
+  width: 6px;
+  height: 6px;
+  background: var(--gold-warm);
+  border-radius: 50%;
+}
+
+.hero-headline {
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  max-width: 950px;
+  margin-bottom: 1.25rem;
+  color: var(--ink-primary);
+}
+
+.hero-headline em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--pharm-primary);
+  background: linear-gradient(120deg, #0b3b60 0%, #06b6d4 50%, #16a34a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-lead {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--ink-secondary);
+  max-width: 760px;
+  margin-bottom: 2.75rem;
+}
+
+/* --- Dual Portal Gateway Cards Grid --- */
+.dual-portal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.portal-gateway-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  padding: 2.25rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+  overflow: hidden;
+}
+
+.portal-gateway-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.portal-gateway-card.pharmacy-portal::before {
+  background: linear-gradient(90deg, #0284c7, #06b6d4);
+}
+
+.portal-gateway-card.agrovet-portal::before {
+  background: linear-gradient(90deg, #16a34a, #06b6d4);
+}
+
+.portal-gateway-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.portal-gateway-card.pharmacy-portal:hover {
+  border-color: var(--pharm-border);
+}
+
+.portal-gateway-card.agrovet-portal:hover {
+  border-color: var(--agro-border);
+}
+
+/* Card Header */
+.portal-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.portal-icon-wrapper {
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.pharmacy-portal .portal-icon-wrapper {
+  background: var(--pharm-light);
+  color: var(--pharm-primary);
+  border: 1px solid var(--pharm-border);
+}
+
+.agrovet-portal .portal-icon-wrapper {
+  background: var(--agro-light);
+  color: var(--agro-primary);
+  border: 1px solid var(--agro-border);
+}
+
+.portal-icon-wrapper svg {
+  width: 28px;
+  height: 28px;
+}
+
+.system-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.pharmacy-portal .system-tag {
+  background: var(--pharm-light);
+  color: var(--pharm-primary);
+  border: 1px solid var(--pharm-border);
+}
+
+.agrovet-portal .system-tag {
+  background: var(--agro-light);
+  color: var(--agro-primary);
+  border: 1px solid var(--agro-border);
+}
+
+.portal-card-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: var(--ink-primary);
+}
+
+.portal-card-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* Key Capability Tags */
+.capability-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.cap-tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface-warm);
+  color: var(--ink-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Mini KPI Strip in Card */
+.portal-kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 1.75rem;
+}
+
+.kpi-unit {
+  text-align: center;
+}
+
+.kpi-number {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  line-height: 1.2;
+}
+
+.kpi-label {
+  font-size: 0.7rem;
+  color: var(--ink-tertiary);
+  font-weight: 500;
+  margin-top: 0.15rem;
+}
+
+/* Card Actions */
+.portal-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.btn-primary-action {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all var(--transition-smooth);
+}
+
+.pharmacy-portal .btn-primary-action {
+  background: var(--pharm-primary);
+  color: #ffffff;
+}
+
+.pharmacy-portal .btn-primary-action:hover {
+  background: var(--pharm-primary-hover);
+  box-shadow: 0 4px 15px var(--pharm-glow);
+}
+
+.agrovet-portal .btn-primary-action {
+  background: var(--agro-primary);
+  color: #ffffff;
+}
+
+.agrovet-portal .btn-primary-action:hover {
+  background: var(--agro-primary-hover);
+  box-shadow: 0 4px 15px var(--agro-glow);
+}
+
+.btn-secondary-action {
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--bg-surface-warm);
+  color: var(--ink-primary);
+  border: 1px solid var(--border-medium);
+  transition: all var(--transition-fast);
+}
+
+.btn-secondary-action:hover {
+  background: var(--bg-surface-tint);
+  border-color: var(--border-strong);
+}
+
+/* --- Enterprise Impact & Metrics Ribbon --- */
+.metrics-ribbon {
+  background: var(--bg-dark-editorial);
+  color: var(--ink-on-dark);
+  padding: 3rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+.metrics-ribbon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.metric-column {
+  border-left: 2px solid rgba(6, 182, 212, 0.45);
+  padding-left: 1.5rem;
+}
+
+.metric-big-number {
+  font-family: var(--font-editorial);
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+}
+
+.metric-subtitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #38bdf8;
+  margin-bottom: 0.35rem;
+}
+
+.metric-context {
+  font-size: 0.8rem;
+  color: var(--ink-on-dark-muted);
+  line-height: 1.5;
+}
+
+/* --- Section Title Headers --- */
+.section-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 3.5rem;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-warm);
+  margin-bottom: 0.75rem;
+}
+
+.section-heading {
+  font-size: 2.6rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--ink-secondary);
+  line-height: 1.7;
+}
+
+/* --- Enterprise Architecture & Feature Matrix --- */
+.features-section {
+  padding: 5rem 0;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.dual-columns-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.pillar-col {
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-canvas);
+  position: relative;
+}
+
+.pillar-col.pharmacy-pillar {
+  border-top: 4px solid var(--pharm-primary);
+}
+
+.pillar-col.agrovet-pillar {
+  border-top: 4px solid var(--agro-primary);
+}
+
+.pillar-title-area {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.pillar-badge-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pharmacy-pillar .pillar-badge-circle {
+  background: var(--pharm-light);
+  color: var(--pharm-primary);
+}
+
+.agrovet-pillar .pillar-badge-circle {
+  background: var(--agro-light);
+  color: var(--agro-primary);
+}
+
+.pillar-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.pillar-tagline {
+  font-size: 0.85rem;
+  color: var(--ink-tertiary);
+}
+
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.feature-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.pharmacy-pillar .feature-check {
+  background: var(--pharm-light);
+  color: var(--pharm-primary);
+}
+
+.agrovet-pillar .feature-check {
+  background: var(--agro-light);
+  color: var(--agro-primary);
+}
+
+.feature-heading {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin-bottom: 0.2rem;
+}
+
+.feature-description {
+  font-size: 0.84rem;
+  color: var(--ink-secondary);
+  line-height: 1.5;
+}
+
+/* --- Unified Executive Dashboard View --- */
+.executive-section {
+  padding: 5rem 0;
+  background: var(--bg-surface-warm);
+}
+
+.exec-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.exec-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-medium);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.exec-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.exec-card-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.exec-card-val {
+  font-family: var(--font-editorial);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+}
+
+.exec-card-trend {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #15803d;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.progress-track {
+  width: 100%;
+  height: 6px;
+  background: var(--border-subtle);
+  border-radius: var(--radius-full);
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+}
+
+.fill-pharm {
+  background: var(--pharm-primary);
+  width: 58%;
+}
+
+.fill-agro {
+  background: var(--agro-primary);
+  width: 42%;
+}
+
+
+/* --- Compliance & Accreditation Stamp Banner --- */
+.compliance-section {
+  padding: 3.5rem 0;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.compliance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.compliance-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface-warm);
+  border: 1px solid var(--border-subtle);
+}
+
+.compliance-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-xs);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-warm);
+}
+
+.compliance-text h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.compliance-text p {
+  font-size: 0.75rem;
+  color: var(--ink-tertiary);
+}
+
+/* --- Corporate Footer --- */
+.main-footer {
+  background: var(--bg-dark-editorial);
+  color: var(--ink-on-dark);
+  padding: 4.5rem 0 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.footer-brand p {
+  color: var(--ink-on-dark-muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+  max-width: 340px;
+}
+
+.footer-col h5 {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  margin-bottom: 1.25rem;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links a {
+  color: var(--ink-on-dark-muted);
+  font-size: 0.85rem;
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.78rem;
+  color: var(--ink-on-dark-muted);
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* --- Interactive Portal SSO & Access Modal --- */
+.portal-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(23, 21, 19, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-smooth);
+}
+
+.portal-modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.portal-modal-window {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-medium);
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  max-width: 620px;
+  overflow: hidden;
+  transform: translateY(20px) scale(0.98);
+  transition: transform var(--transition-smooth);
+  position: relative;
+}
+
+.portal-modal-backdrop.open .portal-modal-window {
+  transform: translateY(0) scale(1);
+}
+
+.modal-header-strip {
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.modal-header-strip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.modal-pharm::before {
+  background: linear-gradient(90deg, #0284c7, #06b6d4);
+}
+
+.modal-agro::before {
+  background: linear-gradient(90deg, #16a34a, #06b6d4);
+}
+
+.modal-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.modal-icon-seal {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-pharm .modal-icon-seal {
+  background: var(--pharm-light);
+  color: var(--pharm-primary);
+}
+
+.modal-agro .modal-icon-seal {
+  background: var(--agro-light);
+  color: var(--agro-primary);
+}
+
+.modal-title-wrap h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.15rem;
+}
+
+.modal-title-wrap p {
+  font-size: 0.78rem;
+  color: var(--ink-tertiary);
+}
+
+.modal-close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-surface-warm);
+  color: var(--ink-secondary);
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background: var(--border-medium);
+  color: var(--ink-primary);
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-role-select {
+  margin-bottom: 1.5rem;
+}
+
+.modal-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-tertiary);
+  margin-bottom: 0.5rem;
+}
+
+.role-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem;
+}
+
+.role-option-btn {
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-medium);
+  background: var(--bg-surface-warm);
+  text-align: left;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  transition: all var(--transition-fast);
+}
+
+.role-option-btn:hover {
+  border-color: var(--ink-primary);
+}
+
+.role-option-btn.selected {
+  background: var(--ink-primary);
+  color: #ffffff;
+  border-color: var(--ink-primary);
+}
+
+.input-field-group {
+  margin-bottom: 1.25rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  background: var(--bg-canvas);
+  color: var(--ink-primary);
+  outline: none;
+  font-family: inherit;
+}
+
+.input-field:focus {
+  border-color: var(--ink-primary);
+  background: #ffffff;
+}
+
+.twofa-preview-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 1rem;
+  background: var(--bg-surface-warm);
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--border-medium);
+  font-size: 0.78rem;
+  color: var(--ink-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.twofa-token {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--gold-warm);
+  letter-spacing: 0.15em;
+}
+
+.btn-modal-submit {
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  transition: all var(--transition-smooth);
+}
+
+.modal-pharm .btn-modal-submit {
+  background: var(--pharm-primary);
+}
+.modal-pharm .btn-modal-submit:hover {
+  background: var(--pharm-primary-hover);
+}
+
+.modal-agro .btn-modal-submit {
+  background: var(--agro-primary);
+}
+.modal-agro .btn-modal-submit:hover {
+  background: var(--agro-primary-hover);
+}
+
+/* Modal Live Workspace Preview Area (After Simulated Login) */
+.modal-live-workspace {
+  display: none;
+  padding: 1.5rem;
+  background: #171513;
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  margin-top: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-live-workspace.active {
+  display: block;
+}
+
+.workspace-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.workspace-user-tag {
+  font-size: 0.82rem;
+  color: #38bdf8;
+  font-family: var(--font-mono);
+}
+
+.workspace-quick-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.w-stat-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.75rem;
+  border-radius: var(--radius-xs);
+  text-align: center;
+}
+
+.w-stat-num {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #a3e635;
+}
+
+.w-stat-label {
+  font-size: 0.68rem;
+  color: #94a3b8;
+}
+
+.workspace-action-toast {
+  font-size: 0.8rem;
+  color: #fcd34d;
+  background: rgba(245, 158, 11, 0.15);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-xs);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Toast Notification Overlay */
+.toast-notice {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #171513;
+  color: #ffffff;
+  padding: 0.85rem 1.4rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-xl);
+  border-left: 4px solid var(--gold-warm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all var(--transition-smooth);
+}
+
+.toast-notice.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 1024px) {
+  .hero-headline {
+    font-size: 2.75rem;
+  }
+  .dual-portal-grid {
+    grid-template-columns: 1fr;
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dual-columns-comparison {
+    grid-template-columns: 1fr;
+  }
+  .divisions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .compliance-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* --- ERP Direct Gateway & Environment Badges --- */
+.modal-env-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.6rem 0.85rem;
+  background: var(--bg-surface-warm);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-medium);
+  font-size: 0.76rem;
+  margin-bottom: 1.25rem;
+}
+
+.env-status-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 600;
+  color: var(--ink-secondary);
+}
+
+.env-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #16a34a;
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.25);
+  animation: pulse-ring 2s infinite;
+}
+
+.env-target-route {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  background: var(--bg-surface);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+  color: var(--gold-warm);
+}
+
+.modal-actions-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.btn-modal-secondary {
+  flex: 1;
+  padding: 0.85rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  background: var(--bg-surface-warm);
+  color: var(--ink-primary);
+  border: 1px solid var(--border-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.btn-modal-secondary:hover {
+  background: var(--border-medium);
+  color: var(--ink-primary);
+}
+
+.btn-launch-terminal-now {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, #0b3b60 0%, #06b6d4 50%, #16a34a 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none;
+  margin-top: 1rem;
+  box-shadow: 0 4px 14px rgba(6, 182, 212, 0.35);
+  transition: all var(--transition-fast);
+}
+
+.btn-launch-terminal-now:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.45);
+}
+
+.btn-direct-card-link {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink-tertiary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-direct-card-link:hover {
+  color: var(--gold-warm);
+}
+
+/* --- Business Divisions Showcase --- */
+.divisions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.division-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 2.25rem 1.85rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.division-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.division-card.div-pharma::before {
+  background: linear-gradient(90deg, #1d4ed8, var(--brand-cyan));
+}
+
+.division-card.div-medical::before {
+  background: linear-gradient(90deg, var(--brand-blue), var(--brand-cyan));
+}
+
+.division-card.div-seeds::before {
+  background: linear-gradient(90deg, var(--brand-green), #84cc16);
+}
+
+.division-card.div-equipment::before {
+  background: linear-gradient(90deg, var(--brand-cyan), var(--brand-green));
+}
+
+.division-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--brand-cyan);
+}
+
+.division-icon-badge {
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.div-pharma .division-icon-badge {
+  background: rgba(29, 78, 216, 0.12);
+  color: #1d4ed8;
+}
+
+.div-medical .division-icon-badge {
+  background: rgba(6, 182, 212, 0.12);
+  color: var(--brand-cyan-dark);
+}
+
+.div-seeds .division-icon-badge {
+  background: rgba(22, 163, 74, 0.12);
+  color: var(--brand-green);
+}
+
+.div-equipment .division-icon-badge {
+  background: rgba(11, 59, 96, 0.1);
+  color: var(--brand-blue);
+}
+
+.division-title {
+  font-family: var(--font-sans);
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin-bottom: 0.75rem;
+}
+
+.division-desc {
+  font-size: 0.92rem;
+  color: var(--ink-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.division-items-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.division-items-list li {
+  font-size: 0.85rem;
+  color: var(--ink-secondary);
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed var(--border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.division-items-list li::before {
+  content: '✓';
+  color: var(--brand-green);
+  font-weight: 700;
+}
+
+.btn-division-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.div-medical .btn-division-action {
+  background: var(--brand-blue);
+  color: #ffffff;
+}
+
+.div-medical .btn-division-action:hover {
+  background: var(--brand-cyan-dark);
+  color: #ffffff;
+}
+
+.div-seeds .btn-division-action {
+  background: var(--brand-green);
+  color: #ffffff;
+}
+
+.div-seeds .btn-division-action:hover {
+  background: var(--brand-green-hover);
+  color: #ffffff;
+}
+
+.div-equipment .btn-division-action {
+  background: var(--brand-blue);
+  color: #ffffff;
+}
+
+.div-equipment .btn-division-action:hover {
+  background: var(--brand-blue-hover);
+  color: #ffffff;
+}
+
+/* --- Location & Google Maps Section --- */
+.location-section {
+  padding: 5rem 0;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.location-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 2.5rem;
+  align-items: stretch;
+  margin-top: 2.5rem;
+}
+
+.location-info-panel {
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.location-tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(6, 182, 212, 0.12);
+  color: var(--brand-cyan-dark);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  align-self: flex-start;
+}
+
+.location-title {
+  font-family: var(--font-editorial);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin-bottom: 0.75rem;
+}
+
+.location-desc {
+  font-size: 0.92rem;
+  color: var(--ink-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+
+.location-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.location-meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.location-meta-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-xs);
+  background: #ffffff;
+  border: 1px solid var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-cyan-dark);
+  flex-shrink: 0;
+}
+
+.location-meta-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--ink-tertiary);
+  letter-spacing: 0.05em;
+}
+
+.location-meta-val {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink-primary);
+}
+
+.map-container-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 380px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-medium);
+  box-shadow: var(--shadow-md);
+  background: #e2e8f0;
+}
+
+.map-container-wrap iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  border: none;
+  display: block;
+}
+
+/* --- Contact & Hours Section --- */
+.contact-section {
+  padding: 5rem 0;
+  background: var(--bg-canvas);
+}
+
+.contact-layout-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+.contact-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 2.25rem 1.85rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-card.card-whatsapp {
+  border-color: rgba(34, 197, 94, 0.4);
+  background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+}
+
+.contact-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.contact-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin-bottom: 0.5rem;
+}
+
+.contact-card-desc {
+  font-size: 0.88rem;
+  color: var(--ink-secondary);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin-bottom: 1rem;
+}
+
+.hours-table tr {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.hours-table td {
+  padding: 0.5rem 0;
+  color: var(--ink-secondary);
+}
+
+.hours-table td.day {
+  font-weight: 600;
+  color: var(--ink-primary);
+}
+
+.hours-table td.time {
+  text-align: right;
+  font-family: var(--font-mono);
+  color: var(--brand-blue);
+  font-weight: 600;
+}
+
+.btn-contact-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-top: auto;
+  transition: all var(--transition-fast);
+}
+
+.btn-whatsapp-live {
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp-live:hover {
+  background: #20ba59;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+}
+
+.btn-call-live {
+  background: var(--brand-blue);
+  color: #ffffff;
+}
+
+.btn-call-live:hover {
+  background: var(--brand-blue-hover);
+  color: #ffffff;
+}
+
+.btn-email-live {
+  background: #ffffff;
+  color: var(--ink-primary);
+  border: 1px solid var(--border-medium);
+}
+
+.btn-email-live:hover {
+  border-color: var(--brand-cyan);
+  color: var(--brand-cyan-dark);
+}
+
+/* --- Floating WhatsApp Widget --- */
+.floating-whatsapp-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #25d366;
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  animation: float-soft 3s ease-in-out infinite;
+}
+
+.floating-whatsapp-widget:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.55);
+  color: #ffffff;
+}
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@media (max-width: 768px) {
+  .hero-headline {
+    font-size: 2.15rem;
+  }
+  .header-inner {
+    height: 74px;
+  }
+  .brand-logo-frame {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+  }
+  .brand-title {
+    font-size: 1.32rem;
+  }
+  .title-brand {
+    font-size: 1.32rem;
+  }
+  .title-ent {
+    font-size: 1.12rem;
+  }
+  .brand-subtitle {
+    font-size: 0.64rem;
+    letter-spacing: 0.09em;
+  }
+  .nav-menu {
+    display: none;
+  }
+  .mobile-toggle {
+    display: inline-flex;
+  }
+  .header-actions {
+    gap: 0.5rem;
+  }
+  .btn-portal-launch {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.8rem;
+    gap: 0.4rem;
+  }
+  .top-bar-right {
+    display: none;
+  }
+  .divisions-grid {
+    grid-template-columns: 1fr;
+  }
+  .location-layout-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-layout-grid {
+    grid-template-columns: 1fr;
+  }
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  .exec-card-grid {
+    grid-template-columns: 1fr;
+  }
+  .compliance-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+  .role-buttons-grid {
+    grid-template-columns: 1fr;
+  }
+  .floating-whatsapp-widget span {
+    display: none;
+  }
+  .floating-whatsapp-widget {
+    padding: 0.85rem;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-inner {
+    height: 70px;
+    gap: 0.5rem;
+  }
+  .brand-identity {
+    gap: 0.65rem;
+  }
+  .brand-logo-frame {
+    width: 42px;
+    height: 42px;
+    border-radius: 9px;
+  }
+  .title-brand {
+    font-size: 1.15rem;
+  }
+  .title-ent {
+    font-size: 0.98rem;
+  }
+  .brand-subtitle {
+    display: none;
+  }
+  .header-actions {
+    gap: 0.4rem;
+  }
+  .btn-portal-launch {
+    padding: 0.46rem 0.72rem;
+    font-size: 0.76rem;
+    gap: 0.32rem;
+  }
+  .btn-portal-launch .txt-full {
+    display: none;
+  }
+  .btn-portal-launch .txt-short {
+    display: inline;
+  }
+}
+
+/* ==========================================================================
+   ANNUAL REPORTS & ENTITY DISCLOSURES
+   ========================================================================== */
+.reports-section {
+  padding: 5.5rem 0;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.reports-year-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 2.2rem 0 3rem 0;
+  flex-wrap: wrap;
+}
+
+.year-tab-btn {
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-full);
+  padding: 0.65rem 1.4rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all var(--transition-fast);
+}
+
+.year-tab-btn:hover {
+  background: #ffffff;
+  border-color: var(--brand-blue-accent);
+  color: var(--ink-primary);
+  transform: translateY(-1px);
+}
+
+.year-tab-btn.active {
+  background: var(--brand-blue);
+  border-color: var(--brand-blue);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(11, 59, 96, 0.25);
+}
+
+.year-tab-btn .tab-badge {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  background: rgba(0, 0, 0, 0.08);
+  color: inherit;
+  font-weight: 700;
+}
+
+.year-tab-btn.active .tab-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.reports-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  margin-bottom: 3rem;
+}
+
+.report-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.report-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.report-card-strip {
+  height: 5px;
+  width: 100%;
+}
+
+.report-card.entity-pharmacy .report-card-strip {
+  background: linear-gradient(90deg, var(--pharm-primary), var(--brand-cyan));
+}
+.report-card.entity-pharmacy {
+  border-top-color: var(--pharm-primary);
+}
+
+.report-card.entity-agrovet .report-card-strip {
+  background: linear-gradient(90deg, var(--agro-primary), #4ade80);
+}
+.report-card.entity-agrovet {
+  border-top-color: var(--agro-primary);
+}
+
+.report-card.entity-group .report-card-strip {
+  background: linear-gradient(90deg, var(--brand-blue), var(--brand-blue-accent), var(--brand-green));
+}
+.report-card.entity-group {
+  border-top-color: var(--brand-blue);
+}
+
+.report-card-body {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.report-header-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.report-entity-pill {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.entity-pharmacy .report-entity-pill {
+  background: var(--pharm-light);
+  color: var(--pharm-primary);
+  border: 1px solid var(--pharm-border);
+}
+
+.entity-agrovet .report-entity-pill {
+  background: var(--agro-light);
+  color: var(--agro-primary);
+  border: 1px solid var(--agro-border);
+}
+
+.entity-group .report-entity-pill {
+  background: #e0f2fe;
+  color: var(--brand-blue);
+  border: 1px solid #bae6fd;
+}
+
+.report-period-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-tertiary);
+}
+
+.report-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
+}
+
+.report-card-subtitle {
+  font-size: 0.84rem;
+  color: var(--ink-secondary);
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+}
+
+.report-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 0.6rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.report-metric-box .metric-num {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--ink-primary);
+}
+
+.report-metric-box .metric-label {
+  font-size: 0.68rem;
+  color: var(--ink-tertiary);
+  margin-top: 2px;
+  line-height: 1.2;
+}
+
+.report-summary-text {
+  font-size: 0.85rem;
+  color: var(--ink-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.4rem;
+  flex: 1;
+}
+
+.report-badges-row {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.4rem;
+}
+
+.report-badge-chip {
+  font-size: 0.7rem;
+  background: #f1f5f9;
+  color: var(--ink-secondary);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.report-card-actions {
+  display: flex;
+  gap: 0.6rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.btn-report-quickview {
+  flex: 1;
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.8rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: all var(--transition-fast);
+}
+
+.btn-report-quickview:hover {
+  background: var(--bg-surface-tint);
+  border-color: var(--brand-blue-accent);
+  color: var(--brand-blue);
+}
+
+.btn-report-download {
+  flex: 1;
+  background: var(--brand-blue);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.8rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: all var(--transition-fast);
+}
+
+.report-card.entity-pharmacy .btn-report-download {
+  background: var(--pharm-primary);
+}
+.report-card.entity-pharmacy .btn-report-download:hover {
+  background: var(--pharm-primary-hover);
+}
+
+.report-card.entity-agrovet .btn-report-download {
+  background: var(--agro-primary);
+}
+.report-card.entity-agrovet .btn-report-download:hover {
+  background: var(--agro-primary-hover);
+}
+
+.report-card.entity-group .btn-report-download {
+  background: var(--brand-blue);
+}
+.report-card.entity-group .btn-report-download:hover {
+  background: var(--brand-blue-hover);
+}
+
+/* Verification Banner */
+.reports-verification-banner {
+  background: linear-gradient(135deg, #071927 0%, #0b3b60 100%);
+  border-radius: var(--radius-md);
+  padding: 1.8rem 2.2rem;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.reports-verification-banner .verification-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(6, 182, 212, 0.2);
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(6, 182, 212, 0.4);
+}
+
+.reports-verification-banner .verification-content {
+  flex: 1;
+}
+
+.reports-verification-banner .verification-content h4 {
+  font-size: 1.05rem;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.reports-verification-banner .verification-content p {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.btn-request-audit {
+  background: #ffffff;
+  color: var(--brand-blue);
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.btn-request-audit:hover {
+  background: var(--brand-cyan-light);
+  color: var(--brand-blue-hover);
+  transform: translateY(-1px);
+}
+
+/* Report Modal Window & Reader */
+.report-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 25, 39, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+}
+
+.report-modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.report-modal-window {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  max-width: 840px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-medium);
+  overflow: hidden;
+}
+
+.report-modal-header {
+  padding: 1.4rem 1.8rem;
+  background: var(--bg-canvas);
+  border-bottom: 1px solid var(--border-medium);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.modal-header-info {
+  flex: 1;
+}
+
+.modal-entity-pill {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+
+.report-modal-header h3 {
+  font-size: 1.35rem;
+  color: var(--ink-primary);
+  margin: 0;
+}
+
+.modal-fiscal-tag {
+  font-size: 0.78rem;
+  color: var(--ink-tertiary);
+  font-family: var(--font-mono);
+  display: block;
+  margin-top: 3px;
+}
+
+.report-modal-body {
+  padding: 1.8rem;
+  overflow-y: auto;
+  font-size: 0.92rem;
+  color: var(--ink-secondary);
+  line-height: 1.7;
+}
+
+.report-modal-footer {
+  padding: 1rem 1.8rem;
+  background: var(--bg-canvas);
+  border-top: 1px solid var(--border-medium);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.8rem;
+}
+
+.btn-modal-print {
+  background: #ffffff;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 1.1rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition-fast);
+}
+
+.btn-modal-print:hover {
+  background: var(--bg-surface-tint);
+  border-color: var(--brand-blue-accent);
+}
+
+.btn-modal-download-direct {
+  background: var(--brand-blue);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 1.3rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition-fast);
+}
+
+.btn-modal-download-direct:hover {
+  background: var(--brand-blue-hover);
+}
+
+/* Modal Internal Sections */
+.rm-section-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ink-primary);
+  margin: 1.4rem 0 0.6rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 2px solid var(--border-subtle);
+  padding-bottom: 0.35rem;
+}
+
+.rm-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.88rem;
+}
+
+.rm-table th {
+  background: var(--bg-canvas);
+  text-align: left;
+  padding: 0.65rem 0.85rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  border-bottom: 1px solid var(--border-medium);
+}
+
+.rm-table td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.rm-table tr:hover td {
+  background: #f8fafc;
+}
+
+.rm-audit-box {
+  background: var(--bg-canvas);
+  border-left: 4px solid var(--brand-green);
+  padding: 1rem 1.2rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-top: 1.4rem;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 1024px) {
+  .reports-grid {
+    grid-template-columns: 1fr;
+  }
+  .reports-verification-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   COMMERCIAL FARMING & AGRICULTURAL PRODUCE SHOWCASE
+   ========================================================================== */
+.produce-section {
+  padding: 5.5rem 0;
+  background: var(--bg-canvas);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.produce-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.produce-card {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.produce-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--brand-green);
+}
+
+.produce-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  background: #1e293b;
+}
+
+.produce-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.produce-card:hover .produce-img-wrap img {
+  transform: scale(1.06);
+}
+
+.produce-tag-overlay {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(7, 25, 39, 0.78);
+  backdrop-filter: blur(8px);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.produce-body {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.produce-title-row {
+  margin-bottom: 0.5rem;
+}
+
+.produce-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--ink-primary);
+  line-height: 1.3;
+}
+
+.produce-title span.swahili-name {
+  font-size: 0.92rem;
+  color: var(--brand-green);
+  font-weight: 700;
+  display: block;
+  margin-top: 2px;
+}
+
+.produce-desc {
+  font-size: 0.88rem;
+  color: var(--ink-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  flex: 1;
+}
+
+.produce-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.3rem 0;
+  font-size: 0.84rem;
+  color: var(--ink-secondary);
+}
+
+.produce-features-list li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.45rem;
+  line-height: 1.45;
+}
+
+.produce-features-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--brand-green);
+  font-weight: 800;
+}
+
+.produce-chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.4rem;
+}
+
+.produce-chip {
+  background: var(--bg-surface-warm);
+  border: 1px solid var(--border-medium);
+  color: var(--ink-primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.btn-produce-inquire {
+  background: linear-gradient(135deg, var(--brand-green) 0%, #15803d 100%);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all var(--transition-fast);
+  box-shadow: 0 2px 6px rgba(22, 163, 74, 0.2);
+}
+
+.btn-produce-inquire:hover {
+  background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+}
+
+/* Farm Overview Banner */
+.farming-banner {
+  background: linear-gradient(135deg, #071927 0%, #0b3b60 60%, #064e3b 100%);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 3rem;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.farming-banner-left h3 {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+}
+
+.farming-banner-left p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.farming-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+
+.f-stat-item {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm);
+  padding: 1.2rem;
+  backdrop-filter: blur(8px);
+}
+
+.f-stat-val {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #4ade80;
+  font-family: var(--font-mono);
+  margin-bottom: 0.25rem;
+}
+
+.f-stat-label {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  line-height: 1.35;
+}
+
+@media (max-width: 900px) {
+  .farming-banner {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+}
+
+
+

@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chiko Enterprises | Integrated Pharmacy & Agrovet ERP Systems</title>
+  <meta name="description" content="Unified Enterprise Resource Planning platform integrating Chiko Pharmacy ERP for clinical dispensaries and Chiko Agrovet ERP for veterinary and agricultural supply chains.">
+  <meta name="keywords" content="Chiko Pharmacy ERP, Chiko Agrovet ERP, medical dispensary software, veterinary supply chain, agro-dealer inventory, enterprise resource planning">
+  
+  <!-- Google Fonts: Editorial Serif + Clean Sans + Technical Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/logo.png">
+  
+  <!-- Core Design System Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       MAIN CORPORATE HEADER
+       ========================================================================== -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <!-- Outstanding Brand Identity -->
+      <a href="#" class="brand-identity" aria-label="Chiko Enterprises">
+        <div class="brand-logo-frame">
+          <img src="img/logo.png" alt="Chiko Enterprises Official Emblem" class="brand-logo-img">
+        </div>
+        <div class="brand-naming">
+          <div class="brand-title">
+            <span class="title-brand">CHIKO</span>
+            <span class="title-ent">ENTERPRISES</span>
+          </div>
+          <div class="brand-subtitle">
+            <span class="sub-pharm">PHARMACEUTICALS</span>
+            <span class="sub-sep">&bull;</span>
+            <span class="sub-agro">AGROVET SOLUTIONS</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu (Single-line, non-wrapping) -->
+      <ul class="nav-menu" id="main-nav-menu">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#divisions" class="nav-link">Divisions</a></li>
+        <li><a href="#produce" class="nav-link">Farm Produce</a></li>
+        <li><a href="#reports" class="nav-link">Reports</a></li>
+        <li><a href="#location" class="nav-link">Location</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Dual Launch Action Buttons -->
+      <div class="header-actions">
+        <button class="btn-portal-launch btn-portal-pharm" onclick="ERP_CONFIG.launch('pharmacy')" title="Directly launch Chiko Pharmacy ERP">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 2v20M2 12h20"/>
+          </svg>
+          <span class="txt">
+            <span class="txt-full">Pharmacy Portal</span>
+            <span class="txt-short">Pharmacy</span>
+          </span>
+        </button>
+
+        <button class="btn-portal-launch btn-portal-agro" onclick="ERP_CONFIG.launch('agrovet')" title="Directly launch Chiko Agrovet ERP">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <span class="txt">
+            <span class="txt-full">Agrovet Portal</span>
+            <span class="txt-short">Agrovet</span>
+          </span>
+        </button>
+
+        <button class="mobile-toggle" id="mobile-menu-btn" aria-label="Toggle navigation">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION: DUAL PORTAL GATEWAY
+       ========================================================================== -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-editorial-badge">
+        <span class="dot"></span>
+        <strong style="color: var(--brand-blue); letter-spacing: 0.02em;">CHIKO ENTERPRISES</strong>
+        <span style="opacity: 0.4;">&bull;</span>
+        <span>Dodoma &amp; Central Zone, Tanzania</span>
+      </div>
+
+      <h1 class="hero-headline">
+        Bridging <em>Clinical Healthcare</em> and <em>Agricultural Productivity</em> with Integrity and Reliability.
+      </h1>
+
+      <p class="hero-lead">
+        Welcome to <strong>Chiko Enterprises</strong>. We are Dodoma's dedicated enterprise provider of certified pharmaceuticals, precision medical appliances, certified quality seeds, and modern agricultural and veterinary equipment across the Central Zone, powered by integrated enterprise technology.
+      </p>
+
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem;">
+        <a href="https://wa.me/255760139735?text=Hello%20Chiko%20Enterprises,%20I%20would%20like%20to%20inquire%20about%20your%20products." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-live" style="padding: 0.85rem 1.6rem; border-radius: var(--radius-full); text-decoration: none; font-weight: 700; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.6rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.99.54 1.777.818 2.796.818 3.182 0 5.768-2.587 5.768-5.768.001-3.18-2.585-5.603-5.768-5.603zm3.377 8.163c-.14.394-.716.74-1.002.776-.286.036-.549.183-1.802-.317-1.503-.6-2.457-2.124-2.531-2.224-.075-.1-.606-.807-.606-1.539 0-.732.383-1.092.518-1.242.136-.149.297-.186.396-.186.099 0 .198.002.284.006.091.005.213-.035.333.253.124.298.423 1.033.46 1.108.037.074.062.161.012.26-.05.099-.075.161-.149.248-.075.086-.157.193-.224.259-.074.074-.152.155-.065.304.087.149.387.638.831 1.034.571.509 1.053.666 1.202.741.149.074.235.062.322-.037.087-.099.371-.433.47-.582.099-.149.198-.124.334-.074.136.05 8.65 4.09 1.002.476.136.074.223.111.26.173.037.062.037.359-.103.753z"/>
+          </svg>
+          <span>Chat on WhatsApp (+255 760 139 735)</span>
+        </a>
+
+        <a href="#divisions" class="btn-email-live" style="padding: 0.85rem 1.5rem; border-radius: var(--radius-full); text-decoration: none; font-weight: 700; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+          <span>Explore Products &amp; Equipment ↓</span>
+        </a>
+      </div>
+
+      <!-- Dual Portal Gateway Cards Grid -->
+      <div class="dual-portal-grid">
+        
+        <!-- CARD 1: CHIKO PHARMACY ERP -->
+        <div class="portal-gateway-card pharmacy-portal">
+          <div class="portal-card-header">
+            <div class="portal-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M2 12h20"/>
+                <circle cx="12" cy="12" r="9"/>
+              </svg>
+            </div>
+            <span class="system-tag">Clinical Node v4.2</span>
+          </div>
+
+          <h3 class="portal-card-title">Chiko Pharmacy ERP</h3>
+          <p class="portal-card-desc">
+            Clinical dispensing, prescription validation, hospital appliances inventory, FEFO batch expiry monitoring, and dispensary point-of-sale management.
+          </p>
+
+          <div class="capability-tags">
+            <span class="cap-tag">Pharmaceuticals</span>
+            <span class="cap-tag">Medical Appliances</span>
+            <span class="cap-tag">e-Prescriptions</span>
+            <span class="cap-tag">Cold-Chain Storage</span>
+            <span class="cap-tag">Dispensary POS</span>
+          </div>
+
+          <div class="portal-kpi-strip">
+            <div class="kpi-unit">
+              <div class="kpi-number" style="color: var(--pharm-primary);">247+</div>
+              <div class="kpi-label">Formulary Products</div>
+            </div>
+            <div class="kpi-unit">
+              <div class="kpi-number" style="color: var(--pharm-primary);">08:00–23:00</div>
+              <div class="kpi-label">Daily Service</div>
+            </div>
+            <div class="kpi-unit">
+              <div class="kpi-number" style="color: var(--pharm-primary);">100%</div>
+              <div class="kpi-label">FEFO Compliance</div>
+            </div>
+          </div>
+
+          <div class="portal-card-actions">
+            <button class="btn-primary-action" onclick="ERP_CONFIG.launch('pharmacy')">
+              <span>Open Pharmacy ERP ↗</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+            <a href="https://wa.me/255760139735?text=Hello%20Chiko%20Pharmacy,%20I%20would%20like%20to%20inquire%20about%20medical%20appliances%20and%20supplies." target="_blank" rel="noopener noreferrer" class="btn-secondary-action">Inquire on WhatsApp 💬</a>
+          </div>
+        </div>
+
+        <!-- CARD 2: CHIKO AGROVET ERP -->
+        <div class="portal-gateway-card agrovet-portal">
+          <div class="portal-card-header">
+            <div class="portal-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <span class="system-tag">Agri-Hub Node v3.8</span>
+          </div>
+
+          <h3 class="portal-card-title">Chiko Agrovet ERP</h3>
+          <p class="portal-card-desc">
+            Certified seed batches, agricultural &amp; veterinary equipment, crop protection chemicals, high-yield feeds, and Central Zone farmer cooperative accounts.
+          </p>
+
+          <div class="capability-tags">
+            <span class="cap-tag">Certified Seeds</span>
+            <span class="cap-tag">Farm &amp; Vet Equipment</span>
+            <span class="cap-tag">Crop Protection</span>
+            <span class="cap-tag">Depot Stock Logistics</span>
+          </div>
+
+          <div class="portal-kpi-strip">
+            <div class="kpi-unit">
+              <div class="kpi-number" style="color: var(--agro-primary);">6 Depots</div>
+              <div class="kpi-label">Central Zone</div>
+            </div>
+            <div class="kpi-unit">
+              <div class="kpi-number" style="color: var(--agro-primary);">08:00–20:00</div>
+              <div class="kpi-label">Mon – Sat Hours</div>
+            </div>
+            <div class="kpi-unit">
+              <div class="kpi-number" style="color: var(--agro-primary);">99.9%</div>
+              <div class="kpi-label">Certified Vigor</div>
+            </div>
+          </div>
+
+          <div class="portal-card-actions">
+            <button class="btn-primary-action" onclick="ERP_CONFIG.launch('agrovet')">
+              <span>Open Agrovet ERP ↗</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+            <a href="https://wa.me/255760139735?text=Hello%20Chiko%20Agrovet,%20I%20would%20like%20to%20inquire%20about%20seeds%20and%20agricultural%20equipment." target="_blank" rel="noopener noreferrer" class="btn-secondary-action">Inquire on WhatsApp 💬</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ENTERPRISE IMPACT & METRICS RIBBON
+       ========================================================================== -->
+  <section class="metrics-ribbon">
+    <div class="container">
+      <div class="metrics-grid">
+        <div class="metric-column">
+          <div class="metric-big-number">100%</div>
+          <div class="metric-subtitle">Certified &amp; Authentic</div>
+          <div class="metric-context">Direct manufacturer sourcing for medical appliances, certified hybrid seeds, and agricultural equipment.</div>
+        </div>
+
+        <div class="metric-column">
+          <div class="metric-big-number">14.2K+</div>
+          <div class="metric-subtitle">Farmers &amp; Agri-Dealers</div>
+          <div class="metric-context">Directly connected through seasonal fertilizer, crop protection, and veterinary supply contracts.</div>
+        </div>
+
+        <div class="metric-column">
+          <div class="metric-big-number">1.4M+</div>
+          <div class="metric-subtitle">Prescriptions Dispensed</div>
+          <div class="metric-context">Audited and cross-checked against national drug formularies with zero regulatory recall.</div>
+        </div>
+
+        <div class="metric-column">
+          <div class="metric-big-number">99.98%</div>
+          <div class="metric-subtitle">Batch Traceability</div>
+          <div class="metric-context">Complete cold-chain temperature telemetry and serial tracking from manufacturer to patient.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ABOUT CHIKO ENTERPRISES & CORPORATE MISSION
+       ========================================================================== -->
+  <section class="about-section" id="about" style="padding: 5rem 0; background: var(--bg-surface);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Corporate Profile</span>
+        <h2 class="section-heading">Bridging Healthcare &amp; Agronomy with Purpose</h2>
+        <p class="section-desc">
+          Headquartered in Dodoma and serving Tanzania's vibrant Central Zone, Chiko Enterprises is dedicated to elevating human health and accelerating agrarian productivity through certified products and ethical practices.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 2.5rem; align-items: center; margin-top: 2rem;">
+        <div style="background: var(--bg-canvas); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 2.5rem;">
+          <h3 style="font-size: 1.45rem; color: var(--ink-primary); margin-bottom: 1rem; font-family: var(--font-editorial);">Our Corporate Mission</h3>
+          <blockquote style="font-size: 1.15rem; font-style: italic; color: var(--brand-blue); border-left: 4px solid var(--brand-cyan); padding-left: 1.25rem; margin-bottom: 1.5rem; line-height: 1.6;">
+            &ldquo;Bridging Clinical Care and Agricultural Productivity with Integrity and Reliability.&rdquo;
+          </blockquote>
+          <p style="font-size: 0.92rem; color: var(--ink-secondary); line-height: 1.7; margin-bottom: 1.25rem;">
+            At Chiko Enterprises, we believe that resilient healthcare and thriving agricultural communities form the cornerstone of regional development. We bridge the gap between world-class manufacturers and local end-users by maintaining strict quality controls, verified cold-chain logistics, and synchronized enterprise systems throughout Dodoma and the Central Zone.
+          </p>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <span style="background: rgba(6, 182, 212, 0.12); color: var(--brand-cyan-dark); font-weight: 700; font-size: 0.8rem; padding: 0.35rem 0.85rem; border-radius: var(--radius-full);">Certified Products</span>
+            <span style="background: rgba(22, 163, 74, 0.12); color: var(--brand-green); font-weight: 700; font-size: 0.8rem; padding: 0.35rem 0.85rem; border-radius: var(--radius-full);">Direct WhatsApp Inquiries</span>
+            <span style="background: rgba(11, 59, 96, 0.1); color: var(--brand-blue); font-weight: 700; font-size: 0.8rem; padding: 0.35rem 0.85rem; border-radius: var(--radius-full);">Dodoma &amp; Central Zone Hub</span>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+          <div style="background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+            <div style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--brand-cyan-dark);">💊</div>
+            <h4 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--ink-primary);">Pharmaceuticals &amp; Clinical Care</h4>
+            <p style="font-size: 0.82rem; color: var(--ink-tertiary); line-height: 1.5;">Dispensing registered human pharmaceuticals, cold-chain biologicals, and calibrated medical appliances with zero compromise on safety.</p>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+            <div style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--brand-green);">🌱</div>
+            <h4 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--ink-primary);">Seed Integrity</h4>
+            <p style="font-size: 0.82rem; color: var(--ink-tertiary); line-height: 1.5;">Certified high-vigor hybrid maize, sorghum, and vegetable seeds suited for the semi-arid soils of Central Tanzania.</p>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+            <div style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--brand-blue);">⚙️</div>
+            <h4 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--ink-primary);">Durable Equipment</h4>
+            <p style="font-size: 0.82rem; color: var(--ink-tertiary); line-height: 1.5;">Field-tested manual and motorized knapsack sprayers, drip irrigation sets, and veterinary surgical tools built to endure.</p>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+            <div style="font-size: 1.8rem; margin-bottom: 0.5rem; color: #25d366;">💬</div>
+            <h4 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--ink-primary);">Instant Inquiries</h4>
+            <p style="font-size: 0.82rem; color: var(--ink-tertiary); line-height: 1.5;">Direct WhatsApp channel with technical product advisory, price quotations, and rapid dispatch support.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CORE BUSINESS DIVISIONS: PHARMACEUTICALS, MEDICAL APPLIANCES, SEEDS, EQUIPMENT
+       ========================================================================== -->
+  <section class="divisions-section" id="divisions" style="padding: 5rem 0; background: var(--bg-canvas);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Core Business Divisions</span>
+        <h2 class="section-heading">Our Specialized Product Divisions</h2>
+        <p class="section-desc">
+          Explore our primary product categories across clinical healthcare and modern agriculture, tailored specifically for health facilities, clinicians, and farmers throughout Dodoma and Central Tanzania.
+        </p>
+      </div>
+
+      <div class="divisions-grid">
+        <!-- Division 1: Registered Pharmaceuticals -->
+        <div class="division-card div-pharma">
+          <div class="division-icon-badge">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10.5 20.5l10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
+              <path d="m8.5 8.5 7 7"/>
+            </svg>
+          </div>
+          <h3 class="division-title">Pharmaceuticals &amp; Medicines</h3>
+          <p class="division-desc">
+            Essential registered prescription medications, chronic disease management therapies, hospital infusions, and cold-chain biologicals.
+          </p>
+          <ul class="division-items-list">
+            <li>Broad-Spectrum Antibiotics &amp; Antimalarials</li>
+            <li>Chronic Disease Care (Hypertension, Diabetes, Cardiac)</li>
+            <li>Cold-Chain Biologicals, Human Insulin &amp; Vaccines</li>
+            <li>Pediatric Formulations, Syrups &amp; IV Infusions</li>
+            <li>Over-The-Counter (OTC) Analgesics &amp; Wellness Products</li>
+          </ul>
+          <a href="https://wa.me/255760139735?text=Hello%20Chiko%20Pharmacy,%20I%20would%20like%20to%20inquire%20about%20Pharmaceuticals%20and%20Medicines." target="_blank" rel="noopener noreferrer" class="btn-division-action">
+            <span>Inquire on WhatsApp 💬</span>
+          </a>
+        </div>
+
+        <!-- Division 2: Medical Appliances -->
+        <div class="division-card div-medical">
+          <div class="division-icon-badge">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M2 12h20"/>
+              <circle cx="12" cy="12" r="9"/>
+            </svg>
+          </div>
+          <h3 class="division-title">Medical Appliances &amp; Devices</h3>
+          <p class="division-desc">
+            Certified diagnostic, monitoring, and therapeutic clinical tools supplied to hospitals, outpatient dispensaries, doctors' clinics, and patient home care.
+          </p>
+          <ul class="division-items-list">
+            <li>Digital Blood Pressure Monitors &amp; Stethoscopes</li>
+            <li>Pulse Oximeters &amp; Blood Glucose Glucometers</li>
+            <li>Infrared Clinical Thermometers &amp; Nebulizers</li>
+            <li>Surgical Disposables (Cannulas, Syringes, Sterile Gloves)</li>
+            <li>Clinic Examination Lights &amp; First Aid Emergency Kits</li>
+          </ul>
+          <a href="https://wa.me/255760139735?text=Hello%20Chiko%20Enterprises,%20I%20would%20like%20to%20inquire%20about%20Medical%20Appliances%20and%20Devices." target="_blank" rel="noopener noreferrer" class="btn-division-action">
+            <span>Inquire on WhatsApp 💬</span>
+          </a>
+        </div>
+
+        <!-- Division 3: Certified Seeds -->
+        <div class="division-card div-seeds">
+          <div class="division-icon-badge">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M12 8v8M8 12h8"/>
+            </svg>
+          </div>
+          <h3 class="division-title">Certified Quality Seeds</h3>
+          <p class="division-desc">
+            High-yield, certified seed varieties tested for superior germination and drought tolerance across Dodoma and semi-arid agro-ecological zones.
+          </p>
+          <ul class="division-items-list">
+            <li>High-Yield Hybrid Maize Seeds (Drought-Tolerant Varieties)</li>
+            <li>Pure Seed Sorghum &amp; Pearl Millet for Drylands</li>
+            <li>Commercial Sunflower Seeds with High Oil Content</li>
+            <li>Vegetable Seeds (Tomatoes, Onions, Watermelon, Cabbage)</li>
+            <li>Certified Seed Dressing &amp; Vigor Treatment</li>
+          </ul>
+          <a href="https://wa.me/255760139735?text=Hello%20Chiko%20Enterprises,%20I%20would%20like%20to%20inquire%20about%20Certified%20Seeds." target="_blank" rel="noopener noreferrer" class="btn-division-action">
+            <span>Inquire on WhatsApp 💬</span>
+          </a>
+        </div>
+
+        <!-- Division 4: Agricultural & Veterinary Equipment -->
+        <div class="division-card div-equipment">
+          <div class="division-icon-badge">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+          </div>
+          <h3 class="division-title">Agricultural &amp; Vet Equipment</h3>
+          <p class="division-desc">
+            Robust field tools, sprayers, and veterinary clinical instruments designed for intensive farm operations and reliable herd health management.
+          </p>
+          <ul class="division-items-list">
+            <li>Manual &amp; Motorized Knapsack Sprayers (16L &amp; 20L)</li>
+            <li>Drip Irrigation Tubing, Kits &amp; Pressure Accessories</li>
+            <li>Automatic Veterinary Drenching Guns &amp; Syringe Kits</li>
+            <li>Castration Forceps, Hoof Trimmers &amp; Livestock Tools</li>
+            <li>Chemical Safety PPE (Respirators, Overalls, Gloves)</li>
+          </ul>
+          <a href="https://wa.me/255760139735?text=Hello%20Chiko%20Enterprises,%20I%20would%20like%20to%20inquire%20about%20Agricultural%20and%20Veterinary%20Equipment." target="_blank" rel="noopener noreferrer" class="btn-division-action">
+            <span>Inquire on WhatsApp 💬</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       COMMERCIAL FARMING & AGRICULTURAL PRODUCE SHOWCASE
+       ========================================================================== -->
+  <section class="produce-section" id="produce">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Field-Grown Excellence</span>
+        <h2 class="section-heading">Our Farm Harvests &amp; Agricultural Produce</h2>
+        <p class="section-desc">
+          Alongside our farm inputs and veterinary supplies, Chiko Enterprises actively operates commercial farms and vineyards in Dodoma and the Central Zone of Tanzania, cultivating premium cash crops and staple food grains under modern agronomic standards.
+        </p>
+      </div>
+
+      <!-- Produce Grid: 5 Featured Crops -->
+      <div class="produce-grid">
+        
+        <!-- CARD 1: DODOMA WINE & TABLE GRAPES -->
+        <div class="produce-card">
+          <div class="produce-img-wrap">
+            <img src="img/produce-grapes.jpg" alt="Fresh Dodoma Wine and Table Grapes" loading="lazy">
+            <span class="produce-tag-overlay">Vineyard Harvest • Dodoma</span>
+          </div>
+          <div class="produce-body">
+            <div class="produce-title-row">
+              <h3 class="produce-title">
+                Wine &amp; Table Grapes
+                <span class="swahili-name">Zabibu Bora za Dodoma</span>
+              </h3>
+            </div>
+            <p class="produce-desc">
+              Cultivated in the sun-drenched vineyards of Dodoma—the heart of Tanzania’s grape culture. We harvest premium red and dark purple grape varieties celebrated for balanced acidity, high natural Brix sweetness, and rich tannin structure.
+            </p>
+            <ul class="produce-features-list">
+              <li>Supplied to licensed regional wine processors &amp; fresh retail fruit distributors</li>
+              <li>Two harvest cycles annually (February &amp; August peaks)</li>
+              <li>Trellised vine management with drip irrigation efficiency</li>
+            </ul>
+            <div class="produce-chips-row">
+              <span class="produce-chip">🍇 High Brix: 18°–22°</span>
+              <span class="produce-chip">Grade A Table &amp; Wine</span>
+              <span class="produce-chip">Bulk Crates Available</span>
+            </div>
+            <a href="https://wa.me/255760139735?text=Hello%20Chiko%20Enterprises,%20I%20would%20like%20to%20inquire%20about%20bulk%20purchasing%20of%20Dodoma%20Grapes." target="_blank" rel="noopener noreferrer" class="btn-produce-inquire">
+              <span>Inquire Wholesale Grapes on WhatsApp 💬</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 2: PURE SUNFLOWERS -->
+        <div class="produce-card">
+          <div class="produce-img-wrap">
+            <img src="img/produce-sunflower.jpg" alt="Golden Sunflowers Field Harvest" loading="lazy">
+            <span class="produce-tag-overlay">Oilseed Harvest • Central Zone</span>
+          </div>
+          <div class="produce-body">
+            <div class="produce-title-row">
+              <h3 class="produce-title">
+                Golden Sunflowers
+                <span class="swahili-name">Alizeti Safi ya Kisasa</span>
+              </h3>
+            </div>
+            <p class="produce-desc">
+              Grown across wide acreage in the semi-arid Central Zone where high solar radiation yields seeds with exceptional oil concentrations. Supplied to commercial edible oil millers and artisanal cold-press processors throughout Tanzania.
+            </p>
+            <ul class="produce-features-list">
+              <li>High oil yield content (~40%–44%) for heart-healthy cooking oil</li>
+              <li>Well-dried, sortex-screened seed grain with low foreign matter (&lt;1%)</li>
+              <li>Sustainable crop rotation enhancing soil moisture conservation</li>
+            </ul>
+            <div class="produce-chips-row">
+              <span class="produce-chip">🌻 Oil Content: ~42%</span>
+              <span class="produce-chip">Low Moisture: &lt;8%</span>
+              <span class="produce-chip">50kg &amp; 100kg Sacks</span>
+            </div>
+            <a href="https://wa.me/255760139735?text=Hello%20Chiko%20Enterprises,%20I%20would%20like%20to%20inquire%20about%20Sunflower%20bulk%20grain%20supply." target="_blank" rel="noopener noreferrer" class="btn-produce-inquire">
+              <span>Inquire Sunflower Grain on WhatsApp 💬</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 3: PREMIUM GROUNDNUTS -->
+        <div class="produce-card">
+          <div class="produce-img-wrap">
+            <img src="img/produce-groundnuts.jpg" alt="Fresh Harvested Groundnuts and Peanuts" loading="lazy">
+            <span class="produce-tag-overlay">Legume Harvest • Dodoma</span>
+          </div>
+          <div class="produce-body">
+            <div class="produce-title-row">
+              <h3 class="produce-title">
+                Premium Groundnuts
+                <span class="swahili-name">Karanga Bora za Dodoma</span>
+              </h3>
+            </div>
+            <p class="produce-desc">
+              Naturally cultivated in Dodoma's well-drained, sandy loam soils. Our Virginia and Spanish peanut crops are rigorous in quality, delivering full kernels prized for snack roasting, peanut butter manufacturing, and food blending.
+            </p>
+            <ul class="produce-features-list">
+              <li>Aflatoxin tested and moisture calibrated below 7% for safe storage</li>
+              <li>Available both unshelled (raw pods) and mechanically shelled red/tan kernels</li>
+              <li>Naturally high in plant protein (25%+) and healthy monounsaturated fats</li>
+            </ul>
+            <div class="produce-chips-row">
+              <span class="produce-chip">🥜 Moisture: &lt;7%</span>
+              <span class="produce-chip">Aflatoxin Cleared</span>
+              <span class="produce-chip">Shelled &amp; Unshelled</span>
+            </div>
+            <a href="https://wa.me/255760139735?text=Hello%20Chiko%20Enterprises,%20I%20would%20like%20to%20inquire%20about%20bulk%20Groundnuts%20supply." target="_blank" rel="noopener noreferrer" class="btn-produce-inquire">
+              <span>Inquire Groundnuts on WhatsApp 💬</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 4: SWEET WATERMELONS -->
+        <div class="produce-card">
+          <div class="produce-img-wrap">
+            <img src="img/produce-watermelon.jpg" alt="Farm Fresh Sweet Watermelons" loading="lazy">
+            <span class="produce-tag-overlay">Horticulture • Drip Irrigated</span>
+          </div>
+          <div class="produce-body">
+            <div class="produce-title-row">
+              <h3 class="produce-title">
+                Sweet Watermelons
+                <span class="swahili-name">Matikiti Maji ya Kisasa</span>
+              </h3>
+            </div>
+            <p class="produce-desc">
+              Cultivated with efficient drip irrigation and organic mulching to produce heavy, uniform, deep-red melons. Known for intense natural sweetness, crisp texture, and durable striped rinds engineered for long-haul transport to urban markets.
+            </p>
+            <ul class="produce-features-list">
+              <li>Average melon weight: 8 kg to 16 kg with high fruit density</li>
+              <li>Brix sugar levels consistently tested at 11.5° to 13°</li>
+              <li>Weekly fresh harvest batches dispatched farm-gate and wholesale</li>
+            </ul>
+            <div class="produce-chips-row">
+              <span class="produce-chip">🍉 Brix: 12°+ Extra Sweet</span>
+              <span class="produce-chip">Grade 1 Fresh Fruit</span>
+              <span class="produce-chip">Farm-Gate Dispatch</span>
+            </div>
+            <a href="https://wa.me/255760139735?text=Hello%20Chiko%20Enterprises,%20I%20would%20like%20to%20inquire%20about%20wholesale%20Watermelon%20harvests." target="_blank" rel="noopener noreferrer" class="btn-produce-inquire">
+              <span>Inquire Watermelons on WhatsApp 💬</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 5: AROMATIC BASIN RICE -->
+        <div class="produce-card">
+          <div class="produce-img-wrap">
+            <img src="img/produce-rice.jpg" alt="Aromatic Basin Rice Paddy Harvest" loading="lazy">
+            <span class="produce-tag-overlay">Lowland Basin • Staple Grain</span>
+          </div>
+          <div class="produce-body">
+            <div class="produce-title-row">
+              <h3 class="produce-title">
+                Aromatic Basin Rice
+                <span class="swahili-name">Mpunga &amp; Mchele Safi wa Kunukia</span>
+              </h3>
+            </div>
+            <p class="produce-desc">
+              Grown in fertile lowland river basins with controlled seasonal irrigation. Our long-grain aromatic rice produces fluffy, non-sticky grains with a distinct natural aroma that has made it a top choice for domestic consumption and institutional kitchens.
+            </p>
+            <ul class="produce-features-list">
+              <li>Modern Sortex optical cleaning ensures &lt;3% broken grain ratio</li>
+              <li>Zero chemical bleaching or artificial glazing—100% natural aroma</li>
+              <li>Available as raw paddy (mpunga) or double-polished grade rice (mchele)</li>
+            </ul>
+            <div class="produce-chips-row">
+              <span class="produce-chip">🌾 Sortex 99% Pure</span>
+              <span class="produce-chip">Natural Aroma</span>
+              <span class="produce-chip">25kg &amp; 50kg Bags</span>
+            </div>
+            <a href="https://wa.me/255760139735?text=Hello%20Chiko%20Enterprises,%20I%20would%20like%20to%20inquire%20about%20Aromatic%20Rice%20wholesale%20supply." target="_blank" rel="noopener noreferrer" class="btn-produce-inquire">
+              <span>Inquire Aromatic Rice on WhatsApp 💬</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Commercial Farming Infrastructure Banner -->
+      <div class="farming-banner">
+        <div class="farming-banner-left">
+          <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #4ade80; font-weight: 800;">Integrated Agricultural Operations</span>
+          <h3>From Our Fertile Soils Directly to Your Supply Chain</h3>
+          <p>
+            By combining high-grade agricultural inputs from our Agrovet division with modern agronomy, drip irrigation, and post-harvest handling, Chiko Enterprises guarantees reliable commercial supply of grains, cash crops, and horticulture for wholesale traders, agro-processors, and supermarkets throughout Tanzania.
+          </p>
+        </div>
+        <div class="farming-stats-grid">
+          <div class="f-stat-item">
+            <div class="f-stat-val">500+</div>
+            <div class="f-stat-label">Acres Under Commercial Cultivation in Central Zone</div>
+          </div>
+          <div class="f-stat-item">
+            <div class="f-stat-val">100%</div>
+            <div class="f-stat-label">Certified Good Agricultural Practices (GAP) Compliant</div>
+          </div>
+          <div class="f-stat-item">
+            <div class="f-stat-val">24/7</div>
+            <div class="f-stat-label">Farm-Gate Loading &amp; Wholesale Logistics Dispatch</div>
+          </div>
+          <div class="f-stat-item">
+            <div class="f-stat-val">0%</div>
+            <div class="f-stat-label">Harmful Post-Harvest Chemical Preservatives Used</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ENTERPRISE ARCHITECTURE COMPARISON & PILLARS
+       ========================================================================== -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Engineered For Precision</span>
+        <h2 class="section-heading">Two Specialized Systems. One Unified Standard.</h2>
+        <p class="section-desc">
+          While sharing central financial ledgers and executive analytics, each ERP is customized from the ground up for the distinct demands of clinical healthcare and agricultural logistics.
+        </p>
+      </div>
+
+      <div class="dual-columns-comparison">
+        
+        <!-- Pillar 1: Pharmacy ERP Core -->
+        <div class="pillar-col pharmacy-pillar">
+          <div class="pillar-title-area">
+            <div class="pillar-badge-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M2 12h20"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="pillar-name">Chiko Pharmacy ERP</h3>
+              <span class="pillar-tagline">Clinical Governance &amp; Dispensary Intelligence</span>
+            </div>
+          </div>
+
+          <p style="font-size: 0.92rem; color: var(--ink-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
+            Built in strict conformity with national pharmacy boards, WHO Good Distribution Practice (GDP), and strict pharmacovigilance standards.
+          </p>
+
+          <ul class="feature-list">
+            <li class="feature-item">
+              <div class="feature-check">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <div class="feature-heading">FEFO (First-Expired, First-Out) Logistics</div>
+                <div class="feature-description">Automated dispensing rules prioritize closest expiration batches to prevent expired stock and eliminate write-offs.</div>
+              </div>
+            </li>
+
+            <li class="feature-item">
+              <div class="feature-check">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <div class="feature-heading">Controlled Narcotics (Schedule II-IV) Audits</div>
+                <div class="feature-description">Dual-signature pharmacist sign-offs, doctor license verification, and real-time tamper-evident dispensing ledgers.</div>
+              </div>
+            </li>
+
+            <li class="feature-item">
+              <div class="feature-check">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <div class="feature-heading">Direct Physician e-Prescription Exchange</div>
+                <div class="feature-description">Encrypted FHIR/HL7 integration enabling hospital wards and outpatient clinics to transmit verifiable digital prescriptions.</div>
+              </div>
+            </li>
+
+            <li class="feature-item">
+              <div class="feature-check">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <div class="feature-heading">Cold-Chain Biologicals Temperature Telemetry</div>
+                <div class="feature-description">Continuous IoT monitoring of medical vaccine refrigerators with automated SMS and WhatsApp escalation alerts on thermal breach.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2: Agrovet ERP Core -->
+        <div class="pillar-col agrovet-pillar">
+          <div class="pillar-title-area">
+            <div class="pillar-badge-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="pillar-name">Chiko Agrovet ERP</h3>
+              <span class="pillar-tagline">Agronomy, Veterinary Care &amp; Depot Logistics</span>
+            </div>
+          </div>
+
+          <p style="font-size: 0.92rem; color: var(--ink-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
+            Tailored for commercial agriculture, veterinary surgeon clinics, certified seed distributors, and regional farmer cooperatives.
+          </p>
+
+          <ul class="feature-list">
+            <li class="feature-item">
+              <div class="feature-check">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <div class="feature-heading">Veterinary Clinical Drench &amp; Herd Vaccine Tracking</div>
+                <div class="feature-description">Dosage calculators based on herd weight classes, withdrawal period alerts for milk and meat safety compliance.</div>
+              </div>
+            </li>
+
+            <li class="feature-item">
+              <div class="feature-check">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <div class="feature-heading">Agrochemical Hazard &amp; Toxicity Classification</div>
+                <div class="feature-description">Automatic safety data sheet (SDS) attachment, protective gear guidance, and compliance with pesticide control board rules.</div>
+              </div>
+            </li>
+
+            <li class="feature-item">
+              <div class="feature-check">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <div class="feature-heading">Seasonal Planting &amp; Fertilizer Demand Forecasting</div>
+                <div class="feature-description">Predictive replenishment modules analyze historical rainfall windows and planting seasons to prevent stock-outs.</div>
+              </div>
+            </li>
+
+            <li class="feature-item">
+              <div class="feature-check">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <div class="feature-heading">Farmer Cooperative Credit &amp; Subsidy Ledgers</div>
+                <div class="feature-description">Flexible revolving credit management, harvest check-off deduction schedules, and government voucher redemptions.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONSOLIDATED EXECUTIVE INTELLIGENCE
+       ========================================================================== -->
+  <section class="executive-section" id="executive">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Group Oversight</span>
+        <h2 class="section-heading">Consolidated Executive Intelligence</h2>
+        <p class="section-desc">
+          Unified visibility across both subsidiaries for corporate directors, finance executives, and regional supply chain directors.
+        </p>
+      </div>
+
+      <div class="exec-card-grid">
+        <div class="exec-card">
+          <div class="exec-card-top">
+            <span class="exec-card-title">Consolidated Revenue YTD</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-warm)" stroke-width="2">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <div class="exec-card-val">$8.42M</div>
+          <div class="exec-card-trend">
+            <span>▲ +16.4% YoY Growth</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill fill-pharm" title="Pharmacy 58%"></div>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--ink-tertiary); margin-top: 0.4rem;">
+            <span>Pharmacy: 58%</span>
+            <span>Agrovet: 42%</span>
+          </div>
+        </div>
+
+        <div class="exec-card">
+          <div class="exec-card-top">
+            <span class="exec-card-title">Inter-Hub Stock Transfers</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-warm)" stroke-width="2">
+              <polyline points="16 3 21 3 21 8"></polyline>
+              <line x1="4" y1="20" x2="21" y2="3"></line>
+              <polyline points="21 16 21 21 16 21"></polyline>
+              <line x1="15" y1="15" x2="21" y2="21"></line>
+              <line x1="4" y1="4" x2="9" y2="9"></line>
+            </svg>
+          </div>
+          <div class="exec-card-val">482 Runs</div>
+          <div class="exec-card-trend">
+            <span>● 100% In-Transit Cold Integrity</span>
+          </div>
+          <p style="font-size: 0.78rem; color: var(--ink-secondary); margin-top: 0.8rem; line-height: 1.4;">
+            Rapid rebalancing of critical veterinary serums and emergency clinical antibiotics between regional depots.
+          </p>
+        </div>
+
+        <div class="exec-card">
+          <div class="exec-card-top">
+            <span class="exec-card-title">Compliance Audit Score</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-warm)" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div class="exec-card-val">99.8%</div>
+          <div class="exec-card-trend">
+            <span>Grade AAA Corporate Trust</span>
+          </div>
+          <p style="font-size: 0.78rem; color: var(--ink-secondary); margin-top: 0.8rem; line-height: 1.4;">
+            Fully synchronized with Ministry of Health, Poison Board, Veterinary Board, and KEPHIS audit logs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ANNUAL REPORTS & ENTITY DISCLOSURES SECTION
+       ========================================================================== -->
+  <section class="reports-section" id="reports">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Transparency &amp; Governance</span>
+        <h2 class="section-heading">Annual Reports &amp; Stakeholder Disclosures</h2>
+        <p class="section-desc">
+          Official statutory filings, clinical supply chain assessments, agronomic impact data, and audited financial statements for both operating entities and consolidated holding.
+        </p>
+      </div>
+
+      <!-- Year Selector Tabs -->
+      <div class="reports-year-tabs" role="tablist">
+        <button type="button" class="year-tab-btn active" data-year="2025" role="tab" aria-selected="true">
+          <span>FY 2025 (Latest Audit)</span>
+          <span class="tab-badge">Audited</span>
+        </button>
+        <button type="button" class="year-tab-btn" data-year="2024" role="tab" aria-selected="false">
+          <span>FY 2024</span>
+          <span class="tab-badge">Archived</span>
+        </button>
+        <button type="button" class="year-tab-btn" data-year="2023" role="tab" aria-selected="false">
+          <span>FY 2023</span>
+          <span class="tab-badge">Archived</span>
+        </button>
+      </div>
+
+      <!-- Reports Dynamic Cards Grid Container -->
+      <div class="reports-grid" id="reports-cards-container">
+        <!-- Rendered dynamically by initAnnualReports() -->
+      </div>
+
+      <!-- Regulatory & Audit Assurance Banner -->
+      <div class="reports-verification-banner">
+        <div class="verification-badge">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <div class="verification-content">
+          <h4>Certified Independent External Audit &amp; TMDA Regulatory Clearance</h4>
+          <p>
+            All annual disclosures for Chiko Pharmacy and Chiko Agrovet are audited under International Standards on Auditing (ISA) and certified for full compliance with the Tanzania Medicines &amp; Medical Devices Authority (TMDA) and Ministry of Agriculture statutory requirements.
+          </p>
+        </div>
+        <a href="#contact" class="btn-request-audit">Request Custom Audit Data →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       LOCATION & GOOGLE MAPS SECTION: DODOMA & CENTRAL ZONE
+       ========================================================================== -->
+  <section class="location-section" id="location">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Geographic Footprint</span>
+        <h2 class="section-heading">Dodoma &amp; Central Zone Hub</h2>
+        <p class="section-desc">
+          Strategically positioned in the capital city of Tanzania to efficiently supply health facilities, agro-dealers, and farmer cooperatives throughout the Central Zone.
+        </p>
+      </div>
+
+      <div class="location-layout-grid">
+        <div class="location-info-panel">
+          <div>
+            <div class="location-tag-badge">
+              <span>● Verified Google Business Location</span>
+            </div>
+            <h3 class="location-title">CHIKO PHARMACY &amp; AGROVET SOLUTIONS</h3>
+            <p class="location-desc">
+              Our official physical facility and distribution center in Dodoma, Tanzania. Centrally situated for walk-in patient pharmaceutical care, medical appliance consultations, agrovet inputs, and regional logistics across the Central Zone.
+            </p>
+
+            <div class="location-meta-list">
+              <div class="location-meta-item">
+                <div class="location-meta-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="location-meta-label">Exact Physical Location</div>
+                  <div class="location-meta-val">CHIKO PHARMACY, Dodoma, Tanzania</div>
+                  <div style="font-size: 0.78rem; color: var(--ink-muted); margin-top: 0.2rem;">Google Place ID: /g/11xlqg9h2k • Central Zone Hub</div>
+                </div>
+              </div>
+
+              <div class="location-meta-item">
+                <div class="location-meta-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 14 14"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="location-meta-label">Operating Hours</div>
+                  <div class="location-meta-val">Pharmacy: 08:00–23:00 Daily | Agrovet: Mon–Sat 08:00–20:00 (Sun 08:00–18:00)</div>
+                </div>
+              </div>
+
+              <div class="location-meta-item">
+                <div class="location-meta-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="location-meta-label">Direct Contact Lines</div>
+                  <div class="location-meta-val">+255 760 139 735 (WhatsApp) • +255 616 743 830</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <a href="https://share.google/CbXQZynWpupcbVLy3" target="_blank" rel="noopener noreferrer" class="btn-primary-action" style="text-align: center; justify-content: center; text-decoration: none;">
+              <span>Open in Google Maps ↗</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=CHIKO+PHARMACY+Dodoma" target="_blank" rel="noopener noreferrer" class="btn-secondary-action" style="text-align: center; justify-content: center; text-decoration: none; padding: 0.65rem 1rem; font-size: 0.82rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); background: var(--surface-card); color: var(--ink-secondary); font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
+              <span>Get Driving Directions 🚗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="map-container-wrap">
+          <iframe 
+            src="https://maps.google.com/maps?q=CHIKO+PHARMACY,+Dodoma,+Tanzania&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+            title="CHIKO PHARMACY Dodoma Official Location Map"
+            loading="lazy" 
+            allowfullscreen>
+          </iframe>
+          <div style="padding: 0.75rem 1rem; background: var(--surface-card); border-top: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem;">
+            <span style="color: var(--ink-secondary); display: inline-flex; align-items: center; gap: 0.4rem;">
+              <span style="color: #22c55e;">●</span> <strong>CHIKO PHARMACY</strong> • Dodoma, Tanzania
+            </span>
+            <a href="https://share.google/CbXQZynWpupcbVLy3" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: none; font-weight: 600;">
+              View Pin ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT & OPERATING HOURS SECTION
+       ========================================================================== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-heading">Contact Channels &amp; Working Hours</h2>
+        <p class="section-desc">
+          Reach our team directly via WhatsApp for rapid quotes, place a telephone inquiry, or visit our central offices and depots during working hours.
+        </p>
+      </div>
+
+      <div class="contact-layout-grid">
+        <!-- Card 1: WhatsApp Instant Contact -->
+        <div class="contact-card card-whatsapp">
+          <div class="contact-card-icon" style="background: rgba(37, 211, 102, 0.15); color: #25d366;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.99.54 1.777.818 2.796.818 3.182 0 5.768-2.587 5.768-5.768.001-3.18-2.585-5.603-5.768-5.603zm3.377 8.163c-.14.394-.716.74-1.002.776-.286.036-.549.183-1.802-.317-1.503-.6-2.457-2.124-2.531-2.224-.075-.1-.606-.807-.606-1.539 0-.732.383-1.092.518-1.242.136-.149.297-.186.396-.186.099 0 .198.002.284.006.091.005.213-.035.333.253.124.298.423 1.033.46 1.108.037.074.062.161.012.26-.05.099-.075.161-.149.248-.075.086-.157.193-.224.259-.074.074-.152.155-.065.304.087.149.387.638.831 1.034.571.509 1.053.666 1.202.741.149.074.235.062.322-.037.087-.099.371-.433.47-.582.099-.149.198-.124.334-.074.136.05 8.65 4.09 1.002.476.136.074.223.111.26.173.037.062.037.359-.103.753z"/>
+            </svg>
+          </div>
+          <h3 class="contact-card-title">Instant WhatsApp</h3>
+          <p class="contact-card-desc">
+            Direct chat with our customer care desk for rapid price quotes, seed varieties, or medical appliance availability.
+          </p>
+          <div style="font-family: var(--font-mono); font-size: 1.15rem; font-weight: 700; color: #16a34a; margin-bottom: 1.25rem;">
+            +255 760 139 735
+          </div>
+          <a href="https://wa.me/255760139735?text=Hello%20Chiko%20Enterprises,%20I%20would%20like%20to%20make%20an%20inquiry." target="_blank" rel="noopener noreferrer" class="btn-contact-action btn-whatsapp-live">
+            <span>Start WhatsApp Chat ↗</span>
+          </a>
+        </div>
+
+        <!-- Card 2: Telephone Lines & Email -->
+        <div class="contact-card">
+          <div class="contact-card-icon" style="background: rgba(11, 59, 96, 0.1); color: var(--brand-blue);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <h3 class="contact-card-title">Phone &amp; Email</h3>
+          <p class="contact-card-desc">
+            Direct voice contact for clinical supply tenders, bulk seed consignments, and executive corporate inquiries.
+          </p>
+          <div style="font-size: 0.88rem; margin-bottom: 1.25rem;">
+            <div style="margin-bottom: 0.4rem;">
+              <span style="color: var(--ink-tertiary);">Customer Desk:</span> 
+              <strong style="color: var(--ink-primary);"><a href="tel:+255616743830" style="text-decoration: none; color: inherit;">+255 616 743 830</a></strong>
+            </div>
+            <div style="margin-bottom: 0.4rem;">
+              <span style="color: var(--ink-tertiary);">CEO Office:</span> 
+              <strong style="color: var(--ink-primary);"><a href="tel:+255657513636" style="text-decoration: none; color: inherit;">+255 657 513 636</a></strong>
+            </div>
+            <div>
+              <span style="color: var(--ink-tertiary);">Official Email:</span> 
+              <strong style="color: var(--brand-blue);"><a href="mailto:chikoenterprises@gmail.com" style="text-decoration: none; color: inherit;">chikoenterprises@gmail.com</a></strong>
+            </div>
+          </div>
+          <a href="tel:+255616743830" class="btn-contact-action btn-call-live">
+            <span>Call Customer Desk 📞</span>
+          </a>
+        </div>
+
+        <!-- Card 3: Operating Hours -->
+        <div class="contact-card">
+          <div class="contact-card-icon" style="background: rgba(6, 182, 212, 0.12); color: var(--brand-cyan-dark);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 14 14"/>
+            </svg>
+          </div>
+          <h3 class="contact-card-title">Operating Hours</h3>
+          <p class="contact-card-desc">
+            Extended hours across our healthcare and agrovet divisions to ensure uninterrupted service to the Central Zone.
+          </p>
+          
+          <div style="margin-bottom: 1rem;">
+            <div style="font-weight: 700; color: var(--brand-blue); font-size: 0.85rem; margin-bottom: 0.25rem;">
+              💊 Pharmacy &amp; Medical Division:
+            </div>
+            <table class="hours-table">
+              <tr>
+                <td class="day">Monday – Sunday</td>
+                <td class="time">08:00 – 23:00</td>
+              </tr>
+            </table>
+
+            <div style="font-weight: 700; color: var(--brand-green); font-size: 0.85rem; margin-bottom: 0.25rem; margin-top: 0.75rem;">
+              🌾 Agrovet &amp; Seeds Division:
+            </div>
+            <table class="hours-table">
+              <tr>
+                <td class="day">Monday – Saturday</td>
+                <td class="time">08:00 – 20:00</td>
+              </tr>
+              <tr>
+                <td class="day">Sunday</td>
+                <td class="time">08:00 – 18:00</td>
+              </tr>
+            </table>
+          </div>
+
+          <a href="mailto:chikoenterprises@gmail.com" class="btn-contact-action btn-email-live">
+            <span>Send Email Inquiry ✉️</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       REGULATORY ACCREDITATION & QUALITY STANDARDS
+       ========================================================================== -->
+  <section class="compliance-section" id="compliance">
+    <div class="container">
+      <div class="compliance-grid">
+        <div class="compliance-item">
+          <div class="compliance-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 14 14"></polyline>
+            </svg>
+          </div>
+          <div class="compliance-text">
+            <h4>WHO-GDP Compliant</h4>
+            <p>Good Distribution Practice standards for medical appliances and pharmaceuticals.</p>
+          </div>
+        </div>
+
+        <div class="compliance-item">
+          <div class="compliance-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M2 12h20"/>
+            </svg>
+          </div>
+          <div class="compliance-text">
+            <h4>Pharmacy Council Licensed</h4>
+            <p>Fully authorized premises and qualified clinical personnel.</p>
+          </div>
+        </div>
+
+        <div class="compliance-item">
+          <div class="compliance-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div class="compliance-text">
+            <h4>Certified Seed Provenance</h4>
+            <p>Official quality inspection and high-germination seed certification.</p>
+          </div>
+        </div>
+
+        <div class="compliance-item">
+          <div class="compliance-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <div class="compliance-text">
+            <h4>ISO 9001:2015 Process</h4>
+            <p>Total quality management verified across central warehousing &amp; regional depots.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CORPORATE FOOTER
+       ========================================================================== -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand">
+          <a href="#" class="brand-identity" style="color: #ffffff;">
+            <div class="brand-logo-frame brand-logo-frame-footer">
+              <img src="img/logo.png" alt="Chiko Enterprises Logo" class="brand-logo-img">
+            </div>
+            <div class="brand-naming">
+              <div class="brand-title brand-title-footer">
+                <span class="title-brand-footer">CHIKO</span>
+                <span class="title-ent-footer">ENTERPRISES</span>
+              </div>
+              <div class="brand-subtitle brand-subtitle-footer">
+                <span style="color: #38bdf8;">PHARMACEUTICALS</span> &bull; <span style="color: #4ade80;">AGROVET SOLUTIONS</span>
+              </div>
+            </div>
+          </a>
+          <p>
+            Chiko Enterprises: &ldquo;Bridging Clinical Care and Agricultural Productivity with Integrity and Reliability.&rdquo; Serving Dodoma and the Central Zone of Tanzania.
+          </p>
+          <div style="font-size: 0.84rem; color: #94a3b8; margin-top: 0.75rem; line-height: 1.6;">
+            <strong>Dodoma Central Hub:</strong> Dodoma City, Central Zone, Tanzania<br>
+            <strong>WhatsApp:</strong> <a href="https://wa.me/255760139735" target="_blank" rel="noopener noreferrer" style="color: #4ade80;">+255 760 139 735</a><br>
+            <strong>Calls:</strong> +255 616 743 830 | CEO: +255 657 513 636<br>
+            <strong>Email:</strong> <a href="mailto:chikoenterprises@gmail.com" style="color: var(--brand-cyan);">chikoenterprises@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Pharmacy &amp; Medical</h5>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="ERP_CONFIG.launch('pharmacy')">Clinical Staff ERP Login ↗</a></li>
+            <li><a href="#divisions">Pharmaceuticals &amp; Medicines</a></li>
+            <li><a href="#divisions">Medical Appliances &amp; Devices</a></li>
+            <li><a href="#reports">Pharmacy Annual Report 📄</a></li>
+            <li><a href="https://wa.me/255760139735?text=Hello%20Chiko%20Pharmacy,%20I%20would%20like%20to%20inquire%20about%20products." target="_blank" rel="noopener noreferrer">Order via WhatsApp 💬</a></li>
+            <li><a href="#compliance">Clinical Quality Standards</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Agrovet &amp; Equipment</h5>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="ERP_CONFIG.launch('agrovet')">Agro-Depot ERP Login ↗</a></li>
+            <li><a href="#divisions">Certified Hybrid Seeds</a></li>
+            <li><a href="#divisions">Agricultural Equipment</a></li>
+            <li><a href="#produce">Commercial Farm Produce 🍇</a></li>
+            <li><a href="#reports">Agrovet Annual Report 📄</a></li>
+            <li><a href="https://wa.me/255760139735?text=Hello%20Chiko%20Agrovet,%20I%20would%20like%20to%20inquire%20about%20seeds%20and%20equipment." target="_blank" rel="noopener noreferrer">Inquire via WhatsApp 💬</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Operating Hours</h5>
+          <ul class="footer-links" style="font-size: 0.82rem; color: #cbd5e1; line-height: 1.7;">
+            <li><strong style="color: #ffffff;">Pharmacy Division:</strong><br>Mon – Sun: 08:00 – 23:00</li>
+            <li style="margin-top: 0.5rem;"><strong style="color: #ffffff;">Agrovet Division:</strong><br>Mon – Sat: 08:00 – 20:00<br>Sunday: 08:00 – 18:00</li>
+            <li style="margin-top: 0.75rem;"><a href="https://share.google/CbXQZynWpupcbVLy3" target="_blank" rel="noopener noreferrer" style="color: var(--brand-cyan); font-weight: 600;">View Exact Location on Google Maps ↗</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; 2026 Chiko Enterprises. All rights reserved. Dodoma &amp; Central Zone, Tanzania.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#about">About Us</a>
+          <a href="#divisions">Products</a>
+          <a href="#produce">Farm Produce</a>
+          <a href="#reports">Annual Reports</a>
+          <a href="https://share.google/CbXQZynWpupcbVLy3" target="_blank" rel="noopener noreferrer">Google Maps ↗</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       FLOATING WHATSAPP INSTANT ACTION WIDGET
+       ========================================================================== -->
+  <a href="https://wa.me/255760139735?text=Hello%20Chiko%20Enterprises,%20I%20would%20like%20to%20inquire%20about%20your%20products." 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="floating-whatsapp-widget" 
+     title="Chat with Chiko Enterprises on WhatsApp">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.99.54 1.777.818 2.796.818 3.182 0 5.768-2.587 5.768-5.768.001-3.18-2.585-5.603-5.768-5.603zm3.377 8.163c-.14.394-.716.74-1.002.776-.286.036-.549.183-1.802-.317-1.503-.6-2.457-2.124-2.531-2.224-.075-.1-.606-.807-.606-1.539 0-.732.383-1.092.518-1.242.136-.149.297-.186.396-.186.099 0 .198.002.284.006.091.005.213-.035.333.253.124.298.423 1.033.46 1.108.037.074.062.161.012.26-.05.099-.075.161-.149.248-.075.086-.157.193-.224.259-.074.074-.152.155-.065.304.087.149.387.638.831 1.034.571.509 1.053.666 1.202.741.149.074.235.062.322-.037.087-.099.371-.433.47-.582.099-.149.198-.124.334-.074.136.05 8.65 4.09 1.002.476.136.074.223.111.26.173.037.062.037.359-.103.753z"/>
+    </svg>
+    <span>WhatsApp Us</span>
+  </a>
+
+  <!-- ==========================================================================
+       INTERACTIVE PORTAL SSO & ACCESS MODAL
+       ========================================================================== -->
+  <div class="portal-modal-backdrop" id="portal-modal">
+    <div class="portal-modal-window modal-pharm" id="modal-window-el">
+      
+      <!-- Modal Header -->
+      <div class="modal-header-strip">
+        <div class="modal-title-wrap">
+          <div class="modal-icon-seal" id="modal-icon-container">
+            <!-- Icon injected by app.js -->
+          </div>
+          <div>
+            <h3 id="modal-title-text">Chiko Pharmacy ERP Gateway</h3>
+            <p id="modal-subtitle-text">Secure Dispensary, Prescription &amp; Clinical Inventory Portal</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        
+        <!-- Live Environment & Target Route Indicator -->
+        <div class="modal-env-pill">
+          <div class="env-status-wrap">
+            <span class="env-dot"></span>
+            <span id="modal-env-label">Gateway: Local Apache Node</span>
+          </div>
+          <span class="env-target-route" id="modal-target-route">Target: /CHIKO/public/dashboard</span>
+        </div>
+
+        <form id="portal-sso-form">
+          
+          <!-- Role Selector -->
+          <div class="modal-role-select">
+            <label class="modal-label">Select Verified Enterprise Role:</label>
+            <div class="role-buttons-grid" id="role-buttons-grid">
+              <!-- Rendered by app.js -->
+            </div>
+          </div>
+
+          <!-- Staff Credentials -->
+          <div class="input-field-group">
+            <label class="modal-label">Staff Identity Email / Badge ID:</label>
+            <input type="email" id="staff-email-input" class="input-field" value="j.ndungu@chikogroup.internal" required>
+          </div>
+
+          <div class="input-field-group">
+            <label class="modal-label">Encrypted Passphrase / Token:</label>
+            <input type="password" class="input-field" value="••••••••••••••••" required>
+          </div>
+
+          <!-- Two-Factor Authenticator Preview -->
+          <div class="twofa-preview-pill">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-warm)" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <span>Active Hardware Token (TOTP):</span>
+            </div>
+            <span class="twofa-token" id="twofa-code-token">849 201</span>
+          </div>
+
+          <button type="submit" class="btn-modal-submit" id="modal-submit-btn">
+            Authenticate &amp; Enter System
+          </button>
+
+          <div class="modal-actions-row">
+            <button type="button" class="btn-modal-secondary" id="modal-direct-login-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+              Direct Login Page
+            </button>
+            <button type="button" class="btn-modal-secondary" id="modal-direct-terminal-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+              Direct Module Launch
+            </button>
+          </div>
+        </form>
+
+        <!-- Simulated Active Workspace Preview (Shown upon authentication) -->
+        <div class="modal-live-workspace" id="modal-live-workspace">
+          <div class="workspace-welcome">
+            <div>
+              <span style="font-size: 0.72rem; color: #a3e635; font-family: var(--font-mono); font-weight: 700;">● SESSION ACTIVE</span>
+              <h4 style="color: #ffffff; font-size: 1.05rem; margin-top: 2px;">ERP Workspace Initialized</h4>
+            </div>
+            <div class="workspace-user-tag" id="workspace-user-tag">
+              Pharmacist • staff@chikogroup.internal
+            </div>
+          </div>
+
+          <div class="workspace-quick-stats">
+            <div class="w-stat-box">
+              <div class="w-stat-num">14</div>
+              <div class="w-stat-label">Pending Dispenses</div>
+            </div>
+            <div class="w-stat-box">
+              <div class="w-stat-num">98.4%</div>
+              <div class="w-stat-label">Warehouse Sync</div>
+            </div>
+            <div class="w-stat-box">
+              <div class="w-stat-num">0</div>
+              <div class="w-stat-label">Critical Alerts</div>
+            </div>
+          </div>
+
+          <a href="#" id="modal-workspace-launch-link" target="_blank" class="btn-launch-terminal-now">
+            <span>Launch Live ERP Workspace ↗</span>
+          </a>
+
+          <div class="workspace-action-toast" style="margin-top: 1rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <span>Direct ERP application container ready. Connected to live Apache runtime.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       INTERACTIVE ANNUAL REPORT READER MODAL
+       ========================================================================== -->
+  <div class="report-modal-backdrop" id="report-modal" aria-hidden="true">
+    <div class="report-modal-window">
+      <div class="report-modal-header">
+        <div class="modal-header-info">
+          <span class="modal-entity-pill" id="rm-entity-pill">Chiko Pharmacy</span>
+          <h3 id="rm-title">Annual Performance &amp; Clinical Impact Report</h3>
+          <span class="modal-fiscal-tag" id="rm-fiscal-tag">Fiscal Year 2025 • Published March 2026</span>
+        </div>
+        <button class="modal-close-btn" id="rm-close-btn" aria-label="Close report">&times;</button>
+      </div>
+
+      <div class="report-modal-body" id="rm-content-body">
+        <!-- Injected dynamically by initAnnualReports() -->
+      </div>
+
+      <div class="report-modal-footer">
+        <button type="button" class="btn-modal-print" id="rm-print-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>Print / Save as PDF</span>
+        </button>
+        <button type="button" class="btn-modal-download-direct" id="rm-download-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span id="rm-download-label">Download Report</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

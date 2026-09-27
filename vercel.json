@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/api/telemetry.php",
+      "destination": "/api/telemetry"
+    },
+    {
+      "source": "/api/sso.php",
+      "destination": "/api/sso"
+    }
+  ]
+}
