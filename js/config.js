@@ -30,7 +30,7 @@
         shortName: 'Pharmacy ERP',
         badge: 'Clinical Node v4.2',
         localBase: '/CHIKO/public',
-        prodBase: 'https://pharmacy.chikoenterprise.com',
+        prodBase: 'https://pharmacy.chikoenterprises.company',
         color: '#0284c7',
         accentColor: '#06b6d4',
         routes: {
@@ -77,7 +77,7 @@
         shortName: 'Agrovet ERP',
         badge: 'Agri-Hub Node v3.8',
         localBase: '/AGROVET',
-        prodBase: 'https://agrovet.chikoenterprise.com',
+        prodBase: 'https://agrovet.chikoenterprises.company',
         color: '#16a34a',
         accentColor: '#22c55e',
         routes: {

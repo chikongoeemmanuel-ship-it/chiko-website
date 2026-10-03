@@ -67,7 +67,8 @@ export default async function handler(req, res) {
         user = rows[0];
       }
 
-      const base = '/CHIKO/public';
+      const isProduction = process.env.VERCEL_ENV === 'production' || process.env.NODE_ENV === 'production';
+      const base = isProduction ? 'https://pharmacy.chikoenterprises.company' : '/CHIKO/public';
       const destination = targetRoute
         ? base + (targetRoute.startsWith('/') ? targetRoute : '/' + targetRoute)
         : base + '/dashboard';
@@ -108,7 +109,8 @@ export default async function handler(req, res) {
         user = rows[0];
       }
 
-      const base = '/AGROVET';
+      const isProduction = process.env.VERCEL_ENV === 'production' || process.env.NODE_ENV === 'production';
+      const base = isProduction ? 'https://agrovet.chikoenterprises.company' : '/AGROVET';
       const destination = targetRoute
         ? base + (targetRoute.startsWith('/') ? targetRoute : '/' + targetRoute)
         : base + '/modules/dashboard/index.php';
